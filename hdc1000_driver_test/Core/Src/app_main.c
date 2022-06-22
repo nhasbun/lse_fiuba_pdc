@@ -56,8 +56,3 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if(GPIO_Pin == GPIO_PIN_5) hdc_on_new_data();
 }
-
-void HAL_I2C_MasterRxCpltCallback (I2C_HandleTypeDef * hi2c)
-{
-	uartsendString("Incoming i2c data...\r\n");
-}
