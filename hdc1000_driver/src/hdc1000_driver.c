@@ -1,7 +1,13 @@
+/**
+ * @file hdc1000_driver.c
+ * @brief Actual hdc1000 driver implementation.
+ *
+ */
+
 #include "hdc1000_driver.h"
 
 
-#define HDC_DEFAULT_ADD 0x80
+#define HDC_DEFAULT_ADD 0x40
 #define TEMP_REGISTER 0x00
 #define HUMIDITY_REGISTER 0x01
 #define CONFIGURATION_REGISTER 0x02
@@ -9,7 +15,7 @@
 #define DEVICE_REGISTER 0xff
 
 
-/**
+/*
  * Specific port functions
  */
 extern void set_iic_handle(void * handle);
