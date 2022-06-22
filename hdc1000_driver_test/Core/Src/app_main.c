@@ -31,19 +31,15 @@ void app_main() {
 	uartsendString(buf);
 
 
+	hdc_update_data();
+
 	while (1) {
 
-		// broken for some reason with I2C1 interrupt event
-		// broken for DMA and interrupts i2c actions
-		// uint32_t current_time = HAL_GetTick();
+		HAL_Delay(1000);
 
-		HAL_Delay(250);
 		hdc_update_data();
 
-		sprintf(buf, "temp: %.2f \r\n", hdc_temperature());
-		uartsendString(buf);
-
-		sprintf(buf, "humidity: %.2f \r\n", hdc_humidity());
+		sprintf(buf, "temp: %.2f --- humidity: %.2f \r\n", hdc_temperature(), hdc_humidity());
 		uartsendString(buf);
 	}
 
